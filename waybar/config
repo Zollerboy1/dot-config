@@ -1,0 +1,86 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar at the bottom of your screen
+    "height": 24, // Waybar height
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock", "custom/wlogout"],
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/wlogout": {
+        "format": "",
+        "on-click": "wlogout", 
+    },
+    "clock": {
+        "format-alt": "{:%d.%m.%Y}"
+    },
+    "cpu": {
+        "format": "{usage}% "
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "battery": {
+        "bat": "BAT0",
+        "full-at": 78,
+        "states": {
+            "p100": 100,
+            "p90": 90,
+            "p80": 80,
+            "p70": 70,
+            "p60": 60,
+            "p50": 50,
+            "p40": 40,
+            "p30": 30,
+            "p20": 20,
+            "p10": 10
+        },
+        "format-full": "{capacity}% 󰂅",
+        "format-discharging-p100": "{capacity}% 󰁹",
+        "format-discharging-p90": "{capacity}% 󰂂",
+        "format-discharging-p80": "{capacity}% 󰂁",
+        "format-discharging-p70": "{capacity}% 󰂀",
+        "format-discharging-p60": "{capacity}% 󰁿",
+        "format-discharging-p50": "{capacity}% 󰁾",
+        "format-discharging-p40": "{capacity}% 󰁽",
+        "format-discharging-p30": "{capacity}% 󰁼",
+        "format-discharging-p20": "{capacity}% 󰁻",
+        "format-discharging-p10": "{capacity}% 󰁺",
+        "format-charging-p100": "{capacity}% 󰂅",
+        "format-charging-p90": "{capacity}% 󰂋",
+        "format-charging-p80": "{capacity}% 󰂊",
+        "format-charging-p70": "{capacity}% 󰢞",
+        "format-charging-p60": "{capacity}% 󰂉",
+        "format-charging-p50": "{capacity}% 󰢝",
+        "format-charging-p40": "{capacity}% 󰂈",
+        "format-charging-p30": "{capacity}% 󰂇",
+        "format-charging-p20": "{capacity}% 󰂇",
+        "format-charging-p10": "{capacity}% 󰢜",
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "easyeffects"
+    }
+}

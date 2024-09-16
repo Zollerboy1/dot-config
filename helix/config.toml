@@ -1,0 +1,4 @@
+theme = "dracula"
+
+[editor.cursor-shape]
+insert = "bar"
