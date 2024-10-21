@@ -26,7 +26,7 @@
     },
     "battery": {
         "bat": "BAT0",
-        "full-at": 78,
+        "full-at": 80,
         "states": {
             "p100": 100,
             "p90": 90,

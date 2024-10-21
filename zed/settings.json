@@ -7,44 +7,64 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "One Dark",
-  "vim_mode": false,
-  "auto_update": false,
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "autosave": "on_focus_change",
-  "ui_font_size": 10,
-  "buffer_font_size": 10,
-  "buffer_font_family": "FiraCode Nerd Font",
-  "lsp": {
-    "rust-analyzer": {
-      "initialization_options": {
-        "cargo": {
-          "features": "all"
+    "assistant": {
+        "default_model": {
+            "provider": "copilot_chat",
+            "model": "gpt-4o"
         },
-        "check": {
-          "command": "clippy" // rust-analyzer.check.command (default: "check")
+        "version": "2"
+    },
+    "inline_completions": {
+        "disabled_globs": [".env"]
+    },
+    "show_inline_completions": true,
+    "theme": "One Dark",
+    "vim_mode": false,
+    "auto_update": false,
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false
+    },
+    "autosave": "on_focus_change",
+    "ui_font_size": 10,
+    "buffer_font_size": 10,
+    "buffer_font_family": "FiraCode Nerd Font",
+    "lsp": {
+        "rust-analyzer": {
+            "initialization_options": {
+                "cargo": {
+                    "features": "all"
+                },
+                "check": {
+                    "command": "clippy" // rust-analyzer.check.command (default: "check")
+                }
+            }
+        },
+        "sourcekit-lsp": {
+            "binary": {
+                "path_lookup": true
+            }
         }
-      }
     },
-    "sourcekit-lsp": {
-      "binary": {
-        "path_lookup": true
-      }
-    }
-  },
-  "languages": {
-    "proto": {
-      "tab_size": 2
+    "file_types": {
+        "Email": ["eml"]
     },
-    "TOML": {
-      "format_on_save": "off"
-    }
-  },
-  "preferred_line_length": 120,
-  "wrap_guides": [80, 120],
-  "soft_wrap": "editor_width",
-  "tab_size": 4
+    "languages": {
+        "OCaml": {
+            "tab_size": 2
+        },
+        "proto": {
+            "tab_size": 2
+        },
+        "Git Commit": {
+            "wrap_guides": [50, 72]
+        },
+        "Email": {
+            "wrap_guides": [72]
+        }
+    },
+    "preferred_line_length": 120,
+    "wrap_guides": [80, 120],
+    "soft_wrap": "editor_width",
+    "tab_size": 4
 }
