@@ -17,7 +17,6 @@
     "inline_completions": {
         "disabled_globs": [".env"]
     },
-    "show_inline_completions": true,
     "theme": "One Dark",
     "vim_mode": false,
     "auto_update": false,
@@ -31,6 +30,10 @@
     "buffer_font_family": "FiraCode Nerd Font",
     "lsp": {
         "rust-analyzer": {
+            "binary": {
+                "path": "/usr/lib/rustup/bin/rust-analyzer",
+                "arguments": []
+            },
             "initialization_options": {
                 "cargo": {
                     "features": "all"
