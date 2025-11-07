@@ -105,6 +105,7 @@ require("lazy").setup({
 	-- LSP
 	{
 		"neovim/nvim-lspconfig",
+		tag = "v2.5.0", -- needed to support nvim <= 0.10
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
@@ -171,6 +172,7 @@ require("lazy").setup({
 				highlight = { enable = true },
 				indent = { enable = true },
 				autotag = { enable = true, enable_close_on_slash = false },
+				ignore_install = { "ipkg" },
 			})
 		end,
 	},
@@ -307,12 +309,14 @@ require("mason-lspconfig").setup()
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-require("mason-lspconfig").setup_handlers({
-	function(server_name)
-		require("lspconfig")[server_name].setup({
-			capabilities = capabilities,
-		})
-	end,
+require("mason-lspconfig").setup({
+	handlers = {
+		function(server_name)
+			require("lspconfig")[server_name].setup({
+				capabilities = capabilities,
+			})
+		end
+	},
 })
 
 -- Global LSP mappings
