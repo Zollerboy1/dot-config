@@ -22,8 +22,9 @@ esac
 client=$(hyprctl activewindow -j | jq -r '.class')
 
 if [[ ",$2," =~ ",$client," ]]; then
-  hyprctl dispatch sendshortcut "CTRL, $KEY, active"
+  MODS=CTRL
 else
-  hyprctl dispatch sendshortcut "SUPER, $KEY, active"
+  MODS=SUPER
 fi
 
+hyprctl dispatch "hl.dsp.send_shortcut({ mods = \"$MODS\", key = \"$KEY\", window = \"activewindow\" })"
